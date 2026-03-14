@@ -45,7 +45,7 @@ export function About({ data }: AboutProps) {
           <div className="relative w-full max-w-[260px] mx-auto md:mx-0 group">
             <div className="absolute inset-0 border-2 border-green rounded translate-x-4 translate-y-4 transition-transform duration-300 group-hover:translate-x-3 group-hover:translate-y-3" />
             <div className="relative rounded overflow-hidden bg-navy-light aspect-square">
-              {data.avatarUrl && data.avatarUrl !== "/images/headshot.jpg" ? (
+              {data.avatarUrl ? (
                 <Image
                   src={data.avatarUrl}
                   alt="Adam Silva"
