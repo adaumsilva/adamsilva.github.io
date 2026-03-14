@@ -35,7 +35,7 @@ export function GitHubStats({ user, username }: GitHubStatsProps) {
       {/* Contribution chart */}
       <div className="rounded overflow-hidden bg-navy">
         <img
-          src={`https://ghchart.rshah.org/64ffda/${username}`}
+          src={`https://ghchart.rshah.org/D97757/${username}`}
           alt={`GitHub contribution chart for ${username}`}
           width={722}
           height={112}

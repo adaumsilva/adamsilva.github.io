@@ -43,7 +43,7 @@ export function About({ data }: AboutProps) {
         <FadeInWhenVisible delay={0.2}>
           <div className="relative w-full max-w-[260px] mx-auto md:mx-0 group">
             <div className="absolute inset-0 border-2 border-green rounded translate-x-4 translate-y-4 transition-transform duration-300 group-hover:translate-x-3 group-hover:translate-y-3" />
-            <div className="relative rounded overflow-hidden bg-green aspect-square">
+            <div className="relative rounded overflow-hidden aspect-square" style={{ backgroundColor: "#D97757" }}>
               {data.avatarUrl ? (
                 <>
                   {/* eslint-disable-next-line @next/next/no-img-element */}
@@ -52,7 +52,7 @@ export function About({ data }: AboutProps) {
                     alt="Adam Silva"
                     width={260}
                     height={260}
-                    className="object-cover w-full h-full grayscale mix-blend-multiply transition-all duration-300"
+                    className="object-cover w-full h-full grayscale group-hover:grayscale-0 mix-blend-multiply group-hover:mix-blend-normal transition-all duration-300"
                   />
                   {/* Green tint overlay — fades out on hover to reveal full colour */}
                   <div className="absolute inset-0 bg-green/40 mix-blend-multiply transition-opacity duration-300 group-hover:opacity-0" />
