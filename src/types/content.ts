@@ -33,6 +33,7 @@ export interface Project {
   id: string;
   title: string;
   featured: boolean;
+  summary: string;
   description: {
     problem: string;
     decision: string;

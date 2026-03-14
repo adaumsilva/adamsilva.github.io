@@ -16,10 +16,10 @@ export function Projects({ data }: ProjectsProps) {
         <SectionHeading number="03" title="Some Things I've Built" />
       </FadeInWhenVisible>
 
-      <div>
+      <div className="grid md:grid-cols-2 xl:grid-cols-3 gap-5">
         {featured.map((project, i) => (
-          <FadeInWhenVisible key={project.id} delay={0.1}>
-            <ProjectCard project={project} index={i} />
+          <FadeInWhenVisible key={project.id} delay={0.1 * (i + 1)}>
+            <ProjectCard project={project} />
           </FadeInWhenVisible>
         ))}
       </div>

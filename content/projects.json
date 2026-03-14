@@ -3,6 +3,7 @@
     "id": "lumina-llm",
     "title": "LuminaLLM",
     "featured": true,
+    "summary": "A modular fine-tuning framework for adapting Llama 3 and Mistral to domain-specific tasks using QLoRA and PEFT. Achieves 75% VRAM reduction via 4-bit NF4 quantisation, enabling full training runs on a single consumer GPU. Ships with W&B experiment tracking and a benchmarking suite covering perplexity, ROUGE, and LLM-as-judge evaluation.",
     "description": {
       "problem": "Off-the-shelf LLMs underperform on domain-specific tasks, and traditional fine-tuning requires expensive high-VRAM hardware that's inaccessible for most practitioners.",
       "decision": "Built a modular QLoRA + PEFT fine-tuning framework for Llama 3 and Mistral, with 4-bit NF4 quantisation (75% VRAM reduction), Flash Attention 2, paged AdamW, and W&B experiment tracking. Supports Alpaca, ShareGPT, and OpenAI instruction formats out of the box.",
@@ -27,6 +28,7 @@
     "id": "nexus-rag",
     "title": "Nexus RAG",
     "featured": true,
+    "summary": "An agentic, production-grade RAG system with hybrid retrieval (ChromaDB vector search + BM25) and cross-encoder re-ranking to cut hallucination rates on enterprise documentation. A LangGraph agent routes each query — answering from the internal knowledge base or falling back to GPT-4 / Claude 3.5 as needed.",
     "description": {
       "problem": "Single-vector search in RAG systems suffers poor recall on long-tail queries and high hallucination rates on enterprise documentation — making them unreliable for production use.",
       "decision": "Designed an agentic RAG pipeline using LangGraph, hybrid retrieval (ChromaDB vector search + BM25 keyword matching), and cross-encoder re-ranking. The agent decides whether to answer from the internal knowledge base or fall back to a general LLM response. Supports both OpenAI GPT-4 and Anthropic Claude 3.5.",
@@ -51,6 +53,7 @@
     "id": "mlops-sentinel",
     "title": "MLOps Sentinel",
     "featured": true,
+    "summary": "A production-ready MLOps template covering the full model lifecycle — from automated training pipelines and model serialisation to a FastAPI inference layer, multi-stage Docker packaging, CI/CD via GitHub Actions, and real-time Prometheus metrics for latency and throughput observability.",
     "description": {
       "problem": "ML teams lack a standardised, observable framework for taking models from experiment to production — leading to inconsistent deployments and zero visibility into model behaviour in production.",
       "decision": "Built a complete MLOps reference implementation covering automated training pipelines, model serialisation, a production FastAPI inference layer, CI/CD via GitHub Actions, containerisation with multi-stage Docker, and real-time Prometheus metrics (latency, request volumes).",
