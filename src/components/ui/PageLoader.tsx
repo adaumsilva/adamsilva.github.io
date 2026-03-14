@@ -6,18 +6,25 @@ export function PageLoader() {
   const [state, setState] = useState<"visible" | "fading" | "hidden">("visible");
 
   useEffect(() => {
+    let fadeTimer: ReturnType<typeof setTimeout>;
+
     const fade = () => {
-      setState("fading");
-      const t = setTimeout(() => setState("hidden"), 500);
-      return () => clearTimeout(t);
+      fadeTimer = setTimeout(() => {
+        setState("fading");
+        setTimeout(() => setState("hidden"), 500);
+      }, 2000);
     };
 
     if (document.readyState === "complete") {
       fade();
     } else {
       window.addEventListener("load", fade, { once: true });
-      return () => window.removeEventListener("load", fade);
     }
+
+    return () => {
+      clearTimeout(fadeTimer);
+      window.removeEventListener("load", fade);
+    };
   }, []);
 
   if (state === "hidden") return null;
