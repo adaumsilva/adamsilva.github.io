@@ -1,4 +1,3 @@
-import Image from "next/image";
 import { SectionHeading } from "@/components/ui/SectionHeading";
 import { TechTag } from "@/components/ui/TechTag";
 import { FadeInWhenVisible } from "@/components/ui/FadeInWhenVisible";
@@ -46,13 +45,13 @@ export function About({ data }: AboutProps) {
             <div className="absolute inset-0 border-2 border-green rounded translate-x-4 translate-y-4 transition-transform duration-300 group-hover:translate-x-3 group-hover:translate-y-3" />
             <div className="relative rounded overflow-hidden bg-navy-light aspect-square">
               {data.avatarUrl ? (
-                <Image
-                  src={data.avatarUrl}
+                // eslint-disable-next-line @next/next/no-img-element
+                <img
+                  src={`${process.env.NEXT_PUBLIC_BASE_PATH ?? ""}${data.avatarUrl}`}
                   alt="Adam Silva"
                   width={260}
                   height={260}
                   className="object-cover w-full h-full mix-blend-multiply filter grayscale hover:grayscale-0 transition-all duration-300"
-                  priority
                 />
               ) : (
                 <div className="w-full h-full flex items-center justify-center bg-navy-lighter text-4xl font-bold text-green">
