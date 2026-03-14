@@ -1,6 +1,7 @@
 import type { Metadata } from "next";
 import { Inter } from "next/font/google";
 import { MotionProvider } from "@/components/layout/MotionProvider";
+import { PageLoader } from "@/components/ui/PageLoader";
 import "./globals.css";
 
 const inter = Inter({
@@ -106,6 +107,7 @@ export default function RootLayout({
         >
           Skip to main content
         </a>
+        <PageLoader />
         <MotionProvider>{children}</MotionProvider>
       </body>
     </html>
