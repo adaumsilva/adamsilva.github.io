@@ -1,9 +1,13 @@
 "use client";
 
+import { m } from "framer-motion";
 import Link from "next/link";
 import { useActiveSection } from "@/hooks/useActiveSection";
 import { SocialLinks } from "./SocialLinks";
+import { useLoader } from "@/components/ui/LoaderContext";
 import type { Social } from "@/types/content";
+
+const EASE = [0.645, 0.045, 0.355, 1.0] as const;
 
 const navItems = [
   { label: "About", href: "#about" },
@@ -16,6 +20,13 @@ const navItems = [
 
 export function Sidebar({ social }: { social: Social }) {
   const active = useActiveSection();
+  const { loaded } = useLoader();
+
+  const fadeUp = (delay: number) => ({
+    initial: { opacity: 0, y: 24 },
+    animate: loaded ? { opacity: 1, y: 0 } : { opacity: 0, y: 24 },
+    transition: { duration: 0.6, delay, ease: EASE },
+  });
 
   return (
     <aside
@@ -23,7 +34,7 @@ export function Sidebar({ social }: { social: Social }) {
       aria-label="Site navigation"
     >
       {/* Top: name + tagline */}
-      <div>
+      <m.div {...fadeUp(1.75)}>
         <Link href="#hero" className="group block mb-2 no-underline">
           <h1 className="text-4xl font-bold text-slate-lightest group-hover:text-green transition-colors duration-200">
             Adam Silva
@@ -33,10 +44,10 @@ export function Sidebar({ social }: { social: Social }) {
         <p className="text-sm text-slate max-w-[200px] leading-relaxed">
           Building scalable AI systems and LLM solutions.
         </p>
-      </div>
+      </m.div>
 
       {/* Middle: nav */}
-      <nav aria-label="Main navigation">
+      <m.nav {...fadeUp(2.0)} aria-label="Main navigation">
         <ul className="flex flex-col gap-4">
           {navItems.map(({ label, href }) => {
             const id = href.replace("#", "");
@@ -63,10 +74,12 @@ export function Sidebar({ social }: { social: Social }) {
             );
           })}
         </ul>
-      </nav>
+      </m.nav>
 
       {/* Bottom: social links */}
-      <SocialLinks social={social} />
+      <m.div {...fadeUp(2.2)}>
+        <SocialLinks social={social} />
+      </m.div>
     </aside>
   );
 }
