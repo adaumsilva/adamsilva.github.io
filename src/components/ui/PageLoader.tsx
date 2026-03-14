@@ -1,15 +1,18 @@
 "use client";
 
 import { useState, useEffect } from "react";
+import { useLoader } from "@/components/ui/LoaderContext";
 
 export function PageLoader() {
   const [state, setState] = useState<"visible" | "fading" | "hidden">("visible");
+  const { setLoaded } = useLoader();
 
   useEffect(() => {
     let fadeTimer: ReturnType<typeof setTimeout>;
 
     const fade = () => {
       fadeTimer = setTimeout(() => {
+        setLoaded(true);
         setState("fading");
         setTimeout(() => setState("hidden"), 500);
       }, 2000);
