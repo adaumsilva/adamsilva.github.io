@@ -14,6 +14,7 @@ const navItems = [
   { label: "Experience", href: "#experience" },
   { label: "Featured Project", href: "#featured-project" },
   { label: "Projects", href: "#projects" },
+  { label: "Open Source", href: "#open-source" },
   { label: "Stats", href: "#stats" },
   { label: "Archive", href: "#archive" },
   { label: "Contact", href: "#contact" },

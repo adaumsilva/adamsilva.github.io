@@ -13,7 +13,7 @@ export function Stats({ data }: StatsProps) {
   return (
     <section id="stats" className="py-24 lg:py-32" aria-label="Certifications">
       <FadeInWhenVisible>
-        <SectionHeading number="04" title="Certifications" />
+        <SectionHeading number="06" title="Certifications" />
       </FadeInWhenVisible>
 
       <FadeInWhenVisible delay={0.1}>

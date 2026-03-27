@@ -13,7 +13,7 @@ export function Contact({ social }: ContactProps) {
       aria-label="Contact"
     >
       <FadeInWhenVisible>
-        <p className="font-mono text-green text-sm mb-4">06. What&apos;s Next?</p>
+        <p className="font-mono text-green text-sm mb-4">08. What&apos;s Next?</p>
       </FadeInWhenVisible>
 
       <FadeInWhenVisible delay={0.1}>

@@ -1,4 +1,4 @@
-import { getHero, getAbout, getExperience, getProjects, getArchive, getStats, getSocial } from "@/lib/content";
+import { getHero, getAbout, getExperience, getProjects, getArchive, getStats, getSocial, getContributions } from "@/lib/content";
 import { Sidebar } from "@/components/layout/Sidebar";
 import { MobileHeader } from "@/components/layout/MobileHeader";
 import { Hero } from "@/components/sections/Hero";
@@ -6,6 +6,7 @@ import { About } from "@/components/sections/About";
 import { Experience } from "@/components/sections/Experience";
 import { FeaturedProject } from "@/components/sections/FeaturedProject";
 import { Projects } from "@/components/sections/Projects";
+import { OpenSource } from "@/components/sections/OpenSource";
 import { Stats } from "@/components/sections/Stats";
 import { Archive } from "@/components/sections/Archive";
 import { Contact } from "@/components/sections/Contact";
@@ -15,6 +16,7 @@ export default async function Home() {
   const about = getAbout();
   const experience = getExperience();
   const projects = getProjects();
+  const contributions = getContributions();
   const archive = getArchive();
   const stats = getStats();
   const social = getSocial();
@@ -33,6 +35,7 @@ export default async function Home() {
           <Experience data={experience} />
           <FeaturedProject />
           <Projects data={projects} />
+          <OpenSource data={contributions} />
           <Stats data={stats} />
           <Archive data={archive} />
           <Contact social={social} />

@@ -11,7 +11,7 @@ export function Archive({ data }: ArchiveProps) {
   return (
     <section id="archive" className="py-24 lg:py-32" aria-label="Project archive">
       <FadeInWhenVisible>
-        <SectionHeading number="05" title="Other Projects" />
+        <SectionHeading number="07" title="Other Projects" />
       </FadeInWhenVisible>
 
       <FadeInWhenVisible delay={0.1}>

@@ -108,3 +108,16 @@ export interface GitHubUser {
   html_url: string;
   bio: string | null;
 }
+
+export interface Contribution {
+  id: string;
+  org: string;
+  orgUrl: string;
+  project: string;
+  projectUrl: string;
+  title: string;
+  description: string;
+  highlights: string[];
+  techTags: string[];
+  links: { repo: string; pr: string | null };
+}
